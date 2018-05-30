@@ -21,9 +21,20 @@ std::istream& operator>> (std::istream &input, Board& board)
 	return input;
 }
 
-string name(){return "pic_"+ to_string(time(0))+".ppm";}
-
-
+string name()
+{
+	int i=0;
+	string s;
+	bool flag=true;
+	while(flag)
+	{
+		ifstream ifile("pic_"+ to_string(i)+".ppm");
+		if(ifile) i++;
+		else flag=false;
+	}
+	return "pic_"+ to_string(i)+".ppm";
+	
+}
 
 void Board::makeTable(RGB rgb[] , int numPixel)
 {
