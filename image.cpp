@@ -21,7 +21,7 @@ std::istream& operator>> (std::istream &input, Board& board)
 	return input;
 }
 
-string name(){return "pic_"+ to_string(time(0))+".ppm";}
+string name(){return to_string(time(0))+".ppm";}
 
 
 
